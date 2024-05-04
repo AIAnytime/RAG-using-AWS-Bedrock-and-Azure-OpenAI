@@ -27,7 +27,7 @@ def get_context(question: str):
     try:
         # Invoke the Lambda function
         response = lambda_client.invoke(
-            FunctionName='demolamda',
+            FunctionName='your function name',
             InvocationType='RequestResponse',
             Payload=json.dumps({"question": question})
         )
@@ -62,7 +62,7 @@ def get_answer_from_kb(query: str):
             openai_api_version="2024-02-15-preview",
             openai_api_key=os.getenv('AZURE_OPENAI_API_KEY'),
             azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT'),
-            azure_deployment="gpt-35-turbo-16k",
+            azure_deployment="deployment name",
             max_tokens=10000,
             temperature = 0.4
         )
